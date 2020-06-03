@@ -13,7 +13,7 @@ It is missing installation of the optional NCBI executables (Blast+, Conserved D
 so detection and curation of conserved domains is not supported. 
 
 The best instructions for initial installation and management of the MySQL database can be found at 
-[the Docker Hub MySQL page](https://hub.docker.com/_/mysql); specific instructions related to instalation of
+[the Docker Hub MySQL page](https://hub.docker.com/_/mysql); specific instructions related to installation of
 a specific phage database can be found on the 
  [the pdm utils installation pages](https://pdm-utils.readthedocs.io/en/latest/installation.html).
 
