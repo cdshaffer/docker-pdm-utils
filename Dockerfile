@@ -82,7 +82,8 @@ RUN { \
 
 # Now add the pdm_utils evironment
 # will need to compile some of these so get build essentials
-RUN apt-get update && apt-get install -y build-essential
+# rm command based on https://www.docker.com/blog/intro-guide-to-dockerfile-best-practices/
+RUN apt-get update && apt-get install --no-install-recommends -y build-essential && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
