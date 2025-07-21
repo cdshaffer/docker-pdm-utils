@@ -8,7 +8,7 @@ It then downloads, builds and installs the various dependencies into the pdm_uti
 [Aragorn](http://130.235.244.92/ARAGORN/), 
 [tRNAscan-SE](http://trna.ucsc.edu/), 
 [infernal](http://eddylab.org/infernal/). 
-[blast+] (https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html)
+[blast+](https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html)
 and a few other low level dependencies. At this time it does not install the CDD database so the 
 routines for detecting conserved domains will not work.
 
