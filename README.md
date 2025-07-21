@@ -2,25 +2,21 @@
 
 This is project to create a pdm-utils docker image.
 
-It currently uses a miniconda3 base image and builds the mysql service using most of the Dockerfile from 
-[mysql version 5.7](https://github.com/docker-library/mysql/tree/master/5.7). 
-It then downloads, builds and installs 
+It currently uses an Ubuntu 18.04 base image and builds the mysql service and sets up the conda environment.
+It then downloads, builds and installs the various dependencies into the pdm_utils conda environment. 
 [MMseqs2](https://github.com/soedinglab/mmseqs2), 
 [Aragorn](http://130.235.244.92/ARAGORN/), 
 [tRNAscan-SE](http://trna.ucsc.edu/), 
-[and infernal](http://eddylab.org/infernal/). 
-It is missing installation of the optional NCBI executables (Blast+, Conserved Domain Database, or Lecacy Blast) 
-so detection and curation of conserved domains is not supported. 
+[infernal](http://eddylab.org/infernal/). 
+[blast+] see NCBI
+and a few other low level dependencies. At this time it does not install the CDD database so the 
+routines for detecting conserved domains will not work.
 
-The best instructions for initial installation and management of the MySQL database can be found at 
-[the Docker Hub MySQL page](https://hub.docker.com/_/mysql); specific instructions related to installation of
-a specific phage database can be found on the 
- [the pdm utils installation pages](https://pdm-utils.readthedocs.io/en/latest/installation.html).
+NOTE: This build has been tested on an arm based mac only. At this time the only tested module 
+was the "file checker" routine. It has not been validated to work on phameration. This image 
+relies on old code that is based on standard intel architechture. Thus it should run on any 
+older intel based mac or intel based Windows machine with docker installed. 
+You will need to install Rosetta 2 for this to work on an arm based mac. Other OS's might run with 
+emmulation but these have not been tested.
 
-WARNING: This is a work in progress. TODO: 
 
-+ separate build machine from final pdm image to help with image size 
-see [this](https://forums.docker.com/t/best-practices-for-git-clone-make-etc-via-dockerfile-run/79152) and 
-[this](https://docs.docker.com/develop/develop-images/multistage-build/). 
-
-+ [Add pdm_utils repository to add the special files not included with the pip install. ](https://pdm-utils.readthedocs.io/en/latest/installation/install_pdm_utils_repo.html#install-pdm-utils-repo)
